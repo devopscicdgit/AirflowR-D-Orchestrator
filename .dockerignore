@@ -1,0 +1,19 @@
+# Python virtual environments
+env/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Git
+.git/
+.gitignore
+
+# Airflow dags, logs, and data
+dags/
+data/
+logs/
+
+# Documentation / misc files
+*.md
