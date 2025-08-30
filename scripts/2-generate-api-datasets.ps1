@@ -27,6 +27,14 @@ if (!(Test-Path $DatasetScript)) {
 Write-Host "🔄 Activating virtual environment..."
 & $EnvActivateScript
 
+# Ensure the output directory exists
+$OutputDir = Join-Path $ProjectRoot "api-services\data"
+if (!(Test-Path $OutputDir)) {
+    New-Item -ItemType Directory -Path $OutputDir -Force | Out-Null
+    Write-Host "📂 Created output directory: $OutputDir"
+}
+
+
 # Run the Python dataset generation script
 Write-Host "🐍 Running generate-experimental-datasets.py..."
 python $DatasetScript

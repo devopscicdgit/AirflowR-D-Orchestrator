@@ -20,6 +20,11 @@ $dataPath = Join-Path $ProjectRoot "data"
 $datasetsPath = Join-Path $dataPath "datasets"
 $logsPath = Join-Path $ProjectRoot "logs"
 $envPath = Join-Path $ProjectRoot "env"
+$dagsPath = Join-Path $ProjectRoot "dags"
+$cachePath = Join-Path $dagsPath "__pycache__"
+$utilsPath = Join-Path $dagsPath "utils"
+$ucachePath = Join-Path $utilsPath "__pycache__"
+
 
 # Delete everything in 'data' except 'datasets'
 Write-Host "🧹 Cleaning data directory but keeping datasets/..."
@@ -37,6 +42,12 @@ if (-Not (Test-Path $datasetsPath)) {
 # Remove logs
 Write-Host "🗑️ Removing logs directory..."
 Remove-Item -Recurse -Force -ErrorAction SilentlyContinue $logsPath
+
+
+# Remove __pycache__
+Write-Host "🗑️ Removing __pycache__ directory..."
+Remove-Item -Recurse -Force -ErrorAction SilentlyContinue $cachePath
+Remove-Item -Recurse -Force -ErrorAction SilentlyContinue $ucachePath
 
 # Remove Python virtual environment
 Write-Host "🗑️ Removing Python virtual environment if it exists..."
