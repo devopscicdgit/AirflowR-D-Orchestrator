@@ -35,15 +35,15 @@ This portfolio demonstrates skills in **data pipeline design, workflow automatio
    ```
 2. Setup Python environment
     ```powershell
-    ./scripts/1-environment-setup.ps1
+    .\scripts\1-environment-setup.ps1
     ```
 3. Generate synthetic datasets
     ```powershell
-    ./scripts/2-generate-api-datasets.ps1
+    .\scripts\2-generate-api-datasets.ps1
     ```
 4. Initialize Airflow environment
     ```powershell
-    ./scripts/3-init-airflow.ps1
+    .\scripts\3-init-airflow.ps1
     ```
     Access Airflow webserver at http://localhost:8080
 
@@ -54,7 +54,7 @@ This portfolio demonstrates skills in **data pipeline design, workflow automatio
     materials_orders_experiments_etl_api: API → SQLite ETL
 6. Teardown environment (optional)
     ```powershell
-    ./scripts/4-teardown.ps1
+    .\scripts\4-teardown.ps1
     ```
     Preserves data/datasets for future use
 
