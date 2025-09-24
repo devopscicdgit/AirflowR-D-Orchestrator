@@ -31,7 +31,7 @@ with DAG(
     # Upload CSV dataset to GCS
     upload_experiments_csv = LocalFilesystemToGCSOperator(
         task_id="upload_experiments_csv",
-        src="/opt/airflow/data/datasets/materials-experiments.csv",
+        src="/opt/airflow/data/datasets/materials_experiments.csv",
         dst="materials_experiments.csv",
         bucket="james-materials-experiments-bucket",
         gcp_conn_id="my_gcs_conn",
@@ -47,39 +47,61 @@ with DAG(
     join_tasks = EmptyOperator(task_id="join_tasks")
 
     # Create BigQuery external table pointing to GCS
+    # create_bq_external_table = BigQueryCreateExternalTableOperator(
+    #     task_id="create_bq_external_table",
+    #     table_resource={
+    #         "tableReference": {
+    #             "projectId": "decent-creek-469617-g7",  # 🔑 replace with your project ID
+    #             "datasetId": "materials_experiments_dataset",
+    #             "tableId": "experiments_table",
+    #         },
+    #         "externalDataConfiguration": {
+    #         "sourceFormat": "CSV",
+    #         "sourceUris": ["gs://james-materials-experiments-bucket/materials_experiments.csv"],
+    #         "schema": {
+    #             "fields": [
+    #                 {"name": "date", "type": "DATE", "mode": "NULLABLE"},
+    #                 {"name": "experiment_id", "type": "STRING", "mode": "REQUIRED"},
+    #                 {"name": "material_id", "type": "STRING", "mode": "REQUIRED"},
+    #                 {"name": "pressure_atm", "type": "FLOAT", "mode": "NULLABLE"},
+    #                 {"name": "researcher", "type": "STRING", "mode": "NULLABLE"},
+    #                 {"name": "result_yield_pct", "type": "FLOAT", "mode": "NULLABLE"},
+    #                 {"name": "temperature_c", "type": "FLOAT", "mode": "NULLABLE"},
+    #                 {"name": "category", "type": "STRING", "mode": "NULLABLE"},
+    #                 {"name": "density_g_cm3", "type": "FLOAT", "mode": "NULLABLE"},
+    #                 {"name": "melting_point_c", "type": "FLOAT", "mode": "NULLABLE"},
+    #                 {"name": "name", "type": "STRING", "mode": "NULLABLE"},
+    #                 {"name": "supplier_id", "type": "STRING", "mode": "NULLABLE"},
+    #                 {"name": "tensile_strength_mpa", "type": "FLOAT", "mode": "NULLABLE"},
+    #             ]
+    #         },
+    #         "csvOptions": {
+    #             "skipLeadingRows": 1
+    #         }
+    #     }
+
+    #     },
+    #     gcp_conn_id="my_gcs_conn",
+    # )
+
     create_bq_external_table = BigQueryCreateExternalTableOperator(
         task_id="create_bq_external_table",
         table_resource={
             "tableReference": {
-                "projectId": "decent-creek-469617-g7",  # 🔑 replace with your project ID
+                "projectId": "decent-creek-469617-g7",  # Your GCP project
                 "datasetId": "materials_experiments_dataset",
                 "tableId": "experiments_table",
             },
             "externalDataConfiguration": {
-            "sourceFormat": "CSV",
-            "sourceUris": ["gs://james-materials-experiments-bucket/materials_experiments.csv"],
-            "schema": {
-                "fields": [
-                    {"name": "date", "type": "DATE", "mode": "NULLABLE"},
-                    {"name": "experiment_id", "type": "STRING", "mode": "REQUIRED"},
-                    {"name": "material_id", "type": "STRING", "mode": "REQUIRED"},
-                    {"name": "pressure_atm", "type": "FLOAT", "mode": "NULLABLE"},
-                    {"name": "researcher", "type": "STRING", "mode": "NULLABLE"},
-                    {"name": "result_yield_pct", "type": "FLOAT", "mode": "NULLABLE"},
-                    {"name": "temperature_c", "type": "FLOAT", "mode": "NULLABLE"},
-                    {"name": "category", "type": "STRING", "mode": "NULLABLE"},
-                    {"name": "density_g_cm3", "type": "FLOAT", "mode": "NULLABLE"},
-                    {"name": "melting_point_c", "type": "FLOAT", "mode": "NULLABLE"},
-                    {"name": "name", "type": "STRING", "mode": "NULLABLE"},
-                    {"name": "supplier_id", "type": "STRING", "mode": "NULLABLE"},
-                    {"name": "tensile_strength_mpa", "type": "FLOAT", "mode": "NULLABLE"},
-                ]
-            },
-            "csvOptions": {
-                "skipLeadingRows": 1
+                "sourceFormat": "CSV",
+                "sourceUris": [
+                    "gs://james-materials-experiments-bucket/materials_experiments.csv"
+                ],
+                "autodetect": True,  # <-- enable schema autodetect
+                "csvOptions": {
+                    "skipLeadingRows": 1  # skip header row
+                }
             }
-        }
-
         },
         gcp_conn_id="my_gcs_conn",
     )
