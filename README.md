@@ -48,6 +48,20 @@ This portfolio demonstrates skills in **data pipeline design, workflow automatio
     Access Airflow webserver at http://localhost:8080
 
     Default credentials: admin / admin
+    ### Accessing Airflow Environments
+
+    Once the environment is running, you can interact with the following components:
+
+    | Component    | Purpose                               | Access / Notes |
+    |-------------|---------------------------------------|----------------|
+    | **Webserver** | DAG monitoring, task management       | [http://localhost:8080](http://localhost:8080)  <br>**Default credentials:** `admin / admin` |
+    | **Scheduler** | Executes and schedules DAG tasks      | Runs as a background process <br>Monitor via logs: <br>`docker-compose logs scheduler` |
+    | **Postgres DB** | Stores metadata (DAG state, users, connections) | CLI access: <br>`docker-compose exec postgres psql -U airflow -d airflow` |
+    | **Logs** | Task execution details | Located at: <br>`./logs/<dag_id>/<task_id>/<execution_date>/1.log` <br>Or view via Web UI |
+    | **API Service** | Provides synthetic datasets | [http://localhost:5000](http://localhost:5000) <br>Available endpoints: <br>`/api/suppliers` <br>`/api/materials` <br>`/api/experiments` <br>`/api/orders` |
+    | **Airflow CLI** | Command-line DAG management | Run commands inside webserver container: <br>`docker-compose exec webserver airflow <command>    # Example: airflow dags list, airflow tasks test    ` |
+
+
  5. Run DAGs   
     materials_experiments_ingestion: Upload CSV → GCS → BigQuery
 
