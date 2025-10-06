@@ -31,7 +31,7 @@ This portfolio demonstrates skills in **data pipeline design, workflow automatio
 1. **Clone the repository**
    ```powershell
    git clone https://github.com/devopscicdgit/AirflowR-D-Orchestrator.git
-   cd airflow-portfolio
+   cd AirflowR-D-Orchestrator
    ```
 2. Setup Python environment
     ```powershell
