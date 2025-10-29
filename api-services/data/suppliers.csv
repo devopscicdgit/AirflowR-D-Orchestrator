@@ -1,51 +1,51 @@
 supplier_id,name,country,reliability_score,lead_time_days
-b6912b07-839f-41e4-86e0-0fa6d5cbefff,"Lee, Brown and Foster",United States Minor Outlying Islands,0.66,16
-cf23c8da-b8ff-419c-b2e2-d22d2f8ccfe2,Kemp-Parker,Luxembourg,0.79,31
-41ddee90-032d-4aec-8b16-be24bb906c32,Byrd-Guzman,South Georgia and the South Sandwich Islands,0.75,49
-bef9a089-eba3-421e-b9c7-d14529ed7e83,Nelson Inc,Algeria,0.73,45
-2701204d-1b4a-4674-91fa-1c435769553c,"Carter, Pitts and Moore",Uruguay,0.85,43
-db1fa7c6-cf16-40c7-aa0c-40ddb1f446fb,"Bryant, Scott and Lee",Spain,0.88,25
-dd2f2249-1c1a-4155-b075-0a66c81c220b,Christian-Wilson,Chile,1.0,34
-7f87fe1a-d3d5-4a52-b3cd-47fd50df7a74,"Martinez, Smith and Frazier",Netherlands Antilles,0.66,14
-8f026340-2f38-494e-8bd4-1bbd8aa7a25f,Murphy-Harrison,Georgia,0.72,22
-e102c1e4-ca3d-454a-b904-c9202c073527,Mullen PLC,India,0.57,27
-ebc3a61c-1df0-4ee2-8648-9edce01f087d,Anderson Inc,Somalia,0.73,23
-bd5ce57f-e5d4-4b65-a1d4-63410159c05f,Anderson LLC,Romania,0.51,25
-9185c23b-e357-4fd5-86a0-107aa68fca11,Ross Ltd,Congo,0.91,35
-fdfabe8d-91ba-4e3e-85c2-ef73c550fec6,Melton-Chan,Central African Republic,0.75,37
-4e4dedd0-6aa6-48a9-9688-733bb3644df8,"Alexander, Baker and Monroe",Spain,0.83,16
-54173c79-a7e7-4f74-a3ce-0bc8ce851ca1,Chambers PLC,Angola,0.92,21
-c5c72eb6-2d82-449f-8bbb-75822019b959,Arias Ltd,Iran,0.92,55
-a055bb68-0dda-4b0f-81ad-de5bb3d7b451,"Velazquez, Mitchell and Robles",Spain,0.51,51
-61bc789b-8cdf-4f37-a19f-2a879655f655,Johnston and Sons,Yemen,0.52,44
-5dfde931-5e5f-4793-b470-e5570ea61dd0,"Thompson, Rich and Miranda",Liberia,0.84,55
-78e8a29b-6e93-4863-9739-6024551d8776,"Coffey, Li and White",Tunisia,0.73,47
-d67acfae-9273-422c-93e5-6a353dfc0b57,"Wolf, Scott and Velasquez",Cook Islands,0.87,59
-bc77ddcb-3258-4c06-9f0e-0880a1dca044,Ramsey-Moreno,Netherlands Antilles,0.82,36
-b7b14e29-5f86-4dc3-8ef9-f7bbc3d530c3,"Allen, Lynch and George",Ghana,0.57,43
-59bcb527-08fd-4d2c-9903-761f584eaf1a,"Brown, Reed and Walker",Faroe Islands,0.96,32
-71b89c49-f8cb-4c93-b317-63bd23c98406,"Perez, White and Miller",Holy See (Vatican City State),0.74,42
-601cf11f-7351-4792-adf8-0e38abd04518,Kirby-Joseph,Eritrea,0.61,35
-03e04f36-83b4-4400-89ce-ee4f00501a04,Edwards LLC,Lithuania,0.86,19
-6b8fff38-8a2d-4922-99f3-82a0eafb1d87,Friedman and Sons,Moldova,0.58,22
-8d1c6428-688f-46a0-a603-2183b034cc66,Roberts-Clark,French Southern Territories,0.64,41
-811d3524-de63-41d6-9fc7-e1c7dd7ba3b9,Valdez Group,North Macedonia,0.78,57
-aba3e4e6-07b1-4537-8713-81827ab2a985,Chandler-Hudson,Svalbard & Jan Mayen Islands,0.97,49
-3008961b-2af3-4910-9741-ac2d84b9ffaf,Payne-Gutierrez,Bolivia,0.87,27
-4437521a-e679-4882-b51e-8b7313f77025,Davis-Davila,Yemen,0.61,11
-270e9696-be2f-4cb5-94ea-9998996f86e2,Mendez-Manning,Armenia,0.97,10
-22ade201-396d-4167-8b18-6f828a4c5345,Thomas and Sons,Morocco,0.6,52
-dc45c5c1-c924-49a2-849c-3c90f9eb46ff,"Fry, Johnson and Terry",Turkey,0.56,20
-d36ba1c0-f2da-4a5c-a4c6-e2a3d0ba0df8,"Perez, Williams and Burgess",Gabon,0.71,55
-88ff4f12-19b5-4d52-92e9-4405a06d469e,West-Simmons,Western Sahara,0.99,33
-b3c3fc35-2d60-4da8-b58e-28b4d08706dc,"Manning, Williams and Bowman",Guernsey,0.89,36
-caef2dbe-c796-42c0-8860-08d7cecaadd3,Norris Ltd,Guam,0.6,58
-caf9dde9-6c6a-4436-998b-06b0de722aca,Smith Ltd,Qatar,0.81,37
-0404f247-a633-4d99-94fb-577a3e3b6761,"Gonzalez, Anderson and Ortiz",Guinea,0.91,60
-84ff03bf-27e0-4ee3-885e-fdc477623a14,Caldwell Ltd,Tanzania,0.9,21
-b24a7ab1-7c88-4973-8f1c-3a72e89477c4,"Robinson, Bradley and Snyder",Senegal,0.86,19
-c0b3cb94-33aa-44a3-8fb0-9429c44cdd8b,"Mitchell, Pineda and Henry",Marshall Islands,0.78,57
-0c4e45ba-ca8c-4473-ba66-c17bbdd102a8,Hart Inc,Bosnia and Herzegovina,0.81,7
-a23c3599-5130-4d6e-9a35-2c49354f4f04,Munoz-Jones,Malawi,0.73,34
-ac192d90-59fc-48a9-b80e-17a893011d85,Hood-Higgins,China,0.62,8
-1a5ada38-869d-4702-923e-84971005e018,Chavez-Burnett,Congo,0.5,53
+a310997b-f0be-4adf-9fc5-f21259185723,Perez-Daugherty,Niue,0.97,19
+241c725b-e282-4487-abdd-bd4930e6dc78,Ward LLC,Nepal,0.56,48
+d3032387-8113-4287-87e8-907e9f3e7287,Murillo PLC,Hungary,0.77,52
+a61dba73-65fb-4c4c-93da-97443a8aad43,"Pratt, Crosby and Burnett",Guinea,0.91,57
+64ea0596-a9f5-457f-9074-2105b1dd499e,Grant Ltd,Hungary,0.69,51
+4981974a-d685-4397-914a-30d6dc3ccd9c,Turner PLC,Brunei Darussalam,0.58,55
+6e961c7a-956f-428e-a3b3-bbd364416f2a,Reese-Barry,Bangladesh,0.52,54
+f658421a-9970-435e-a9af-b6701c27f619,"Stewart, Singleton and Henderson",British Indian Ocean Territory (Chagos Archipelago),0.6,9
+3b0ce78d-c4ff-459c-94fe-3da6ac67218b,"Parker, Stanley and Smith",Bulgaria,0.64,35
+ff912e26-aee2-45a4-b83d-d3d73f50a7ae,Brewer-Harrison,South Africa,0.95,7
+71bc3bd6-991e-44fd-8720-a215987c4ae6,Cruz Ltd,Samoa,0.89,18
+e86cccfb-0865-4253-9d5e-1aea9c32edf1,Nguyen-Patterson,Anguilla,0.72,43
+4c4a03a8-1e25-4afd-97dc-98d7a7ddfee9,"Moses, Jenkins and Bell",Kenya,0.75,30
+3e04fbad-da5c-4877-9797-2372e8b4304e,Rodriguez-Roberts,Mozambique,0.91,5
+39f8e3e2-cafc-4fe6-af94-36c53c83707a,Farley-Lamb,Mauritania,0.97,12
+c98dcc96-32c3-4331-989e-88017ecc082f,"Savage, Smith and Lewis",Taiwan,0.73,27
+61900991-1338-4624-bc1d-84e02061dfb4,Campbell Group,Nicaragua,0.66,14
+6df21c85-e3a6-40e0-94b7-bd336588a059,Brown Inc,Afghanistan,1.0,10
+7feef969-65ae-4e46-be3b-1df698bd8038,Taylor-Sloan,Guadeloupe,0.64,34
+8ecaa541-c6c9-41e5-8949-b46eabddfc0c,"Thomas, Miller and Foster",Marshall Islands,0.97,19
+37f484dd-99e1-4b0b-a576-fb9bd1d7bef2,Miller-Donaldson,Zambia,0.9,52
+38a63d8a-a426-463c-905a-c6c557ca1359,Pham-Green,Zambia,0.57,28
+cc3167ef-984d-4fa2-b7cb-9469d6804979,"Evans, Garcia and Shannon",Micronesia,0.6,54
+b5608458-eedb-44a1-8342-6098c7b564b2,"Cunningham, Obrien and Colon",Angola,0.52,20
+a30d1a06-7379-4f2e-a169-5fda9d48e451,Ballard-Hopkins,Montserrat,0.65,33
+b1145f45-0829-4cd3-b3fa-57729f5f7fd1,"Carpenter, May and Henderson",India,0.71,6
+040edfe6-5a49-469f-a372-c063868e54ff,Pollard Ltd,Ukraine,0.56,32
+0cbfd5f1-4397-4ddf-b72b-b632769d0734,"Scott, Melton and Chen",New Caledonia,0.76,53
+01d25eab-5cde-4c8a-9e16-eb8499925188,"Jackson, Wise and Morales",Spain,0.78,56
+04e03d9c-46ee-4fe6-ae79-ae9c80534fc7,Lee Inc,Croatia,0.63,33
+dd994416-e684-40a7-8ff5-a6571cd273b7,Brown and Sons,Peru,0.93,28
+d57ca5a6-3cb7-4ada-9146-ff6ebc7dcec8,Williamson PLC,Tonga,0.62,41
+1c85991d-d48f-42a1-a95c-f105fd58e80f,Mcguire-Jensen,Monaco,0.62,28
+7f1bf62d-e2a8-49fd-b436-553278644c12,Barber-Mays,Turks and Caicos Islands,0.84,20
+ab00bd00-3d03-48b6-9eb0-79d0b1b8d20d,Welch Group,Mongolia,0.79,50
+3cd52923-2a79-4fc3-bc28-8814a9b30aee,Kline-Parker,Moldova,0.63,23
+20480eb6-3bbd-48a3-afca-992b723b2d19,"Bean, Campbell and Holland",Nauru,0.72,38
+085d19f4-0373-429c-873f-f83e22ea10df,"Foster, Green and Jones",Azerbaijan,0.85,27
+0fadc1f2-108f-4a98-9555-bca462a9ef64,"Perry, Martin and Compton",Malawi,0.85,48
+e8d3f86f-4904-4b4a-ac8f-ecd285958b3a,"Morales, Buchanan and Burns",Ukraine,0.78,17
+7fd3646d-8e10-430c-947e-8d5c230d4815,Colon and Sons,San Marino,0.65,19
+6a447fd6-09e6-4cab-a53d-e40c51d3575c,Murphy Ltd,Australia,0.55,45
+869e86b4-0543-4009-bddc-599ac26410e2,"Grant, Sullivan and Munoz",Gambia,0.71,16
+37f50d1f-f6bd-40eb-a022-d425d765d967,Stout PLC,Saint Pierre and Miquelon,0.51,39
+3bd4fb04-6c86-446a-beb2-b4876be85794,Frey-Kline,Australia,0.72,37
+855e85de-72bc-473b-8d2d-f84a5dde5397,Johnson and Sons,Serbia,0.94,14
+1f26a91c-de8f-449c-95a7-eff66f8203ec,Meyer Ltd,Bangladesh,0.54,31
+5195eeb0-d952-4287-90d3-01722532dfdf,"Martin, Rodriguez and Santos",Pakistan,0.88,21
+5cd7e0b8-477f-4ff6-ae08-de88a4d2d091,"Lawrence, Salas and Watkins",Guadeloupe,0.73,26
+1379ed87-87b0-48a8-9f5d-7a15c78ddf73,Johnson-Barnes,Angola,0.96,42
