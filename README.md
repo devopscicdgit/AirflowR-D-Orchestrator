@@ -1,5 +1,7 @@
 # Airflow ETL/ELT Portfolio
 
+[![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/) [![Airflow 2.9.1](https://img.shields.io/badge/airflow-2.9.1-red.svg)](https://airflow.apache.org/) [![Docker Compose](https://img.shields.io/badge/docker-compose-blue.svg)](https://docs.docker.com/compose/) [![GCP Ready](https://img.shields.io/badge/google_cloud-ready-4285f4.svg)](https://cloud.google.com/)
+
 This repository demonstrates a professional **Airflow ETL/ELT pipeline portfolio**, including end-to-end orchestration, transformation, and cloud integration for **research/academic-style datasets**.
 
 Key highlights:
