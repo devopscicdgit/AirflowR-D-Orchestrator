@@ -1,6 +1,15 @@
 # Airflow ETL/ELT Portfolio
 
-[![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/) [![Airflow 2.9.1](https://img.shields.io/badge/airflow-2.9.1-red.svg)](https://airflow.apache.org/) [![Docker Compose](https://img.shields.io/badge/docker-compose-blue.svg)](https://docs.docker.com/compose/) [![GCP Ready](https://img.shields.io/badge/google_cloud-ready-4285f4.svg)](https://cloud.google.com/)
+[![Python 3.12](https://img.shields.io/badge/python-3.12-3776AB.svg?logo=python)](https://www.python.org/downloads/)
+[![Apache Airflow 2.9](https://img.shields.io/badge/airflow-2.9.1-017CEE.svg?logo=apacheairflow)](https://airflow.apache.org/)
+[![Flask API](https://img.shields.io/badge/flask-API-000000.svg?logo=flask)](https://flask.palletsprojects.com/)
+[![Pandas](https://img.shields.io/badge/pandas-2.x-150458.svg?logo=pandas)](https://pandas.pydata.org/)
+[![Docker Compose](https://img.shields.io/badge/docker%20compose-Dev%20Env-1D63ED.svg?logo=docker)](https://docs.docker.com/compose/)
+[![SQLite](https://img.shields.io/badge/sqlite-DB-044A64.svg?logo=sqlite)](https://www.sqlite.org/)
+[![BigQuery Ready](https://img.shields.io/badge/bigquery-ready-1A73E8.svg?logo=googlecloud)](https://cloud.google.com/bigquery)
+[![GCS Ready](https://img.shields.io/badge/google%20cloud%20storage-ready-4285F4.svg?logo=googlecloud)](https://cloud.google.com/storage)
+[![Data Generation: Faker](https://img.shields.io/badge/faker-synthetic_data-FF6F00.svg)](https://faker.readthedocs.io/)
+
 
 This repository demonstrates a professional **Airflow ETL/ELT pipeline portfolio**, including end-to-end orchestration, transformation, and cloud integration for **research/academic-style datasets**.
 
