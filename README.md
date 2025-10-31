@@ -1,14 +1,16 @@
 # Airflow ETL/ELT Portfolio
 
 [![Python 3.12](https://img.shields.io/badge/python-3.12-3776AB.svg?logo=python)](https://www.python.org/downloads/)
-[![Apache Airflow 2.9](https://img.shields.io/badge/airflow-2.9.1-017CEE.svg?logo=apacheairflow)](https://airflow.apache.org/)
-[![Flask API](https://img.shields.io/badge/flask-API-000000.svg?logo=flask)](https://flask.palletsprojects.com/)
-[![Pandas](https://img.shields.io/badge/pandas-2.x-150458.svg?logo=pandas)](https://pandas.pydata.org/)
-[![Docker Compose](https://img.shields.io/badge/docker%20compose-Dev%20Env-1D63ED.svg?logo=docker)](https://docs.docker.com/compose/)
-[![SQLite](https://img.shields.io/badge/sqlite-DB-044A64.svg?logo=sqlite)](https://www.sqlite.org/)
-[![BigQuery Ready](https://img.shields.io/badge/bigquery-ready-1A73E8.svg?logo=googlecloud)](https://cloud.google.com/bigquery)
-[![GCS Ready](https://img.shields.io/badge/google%20cloud%20storage-ready-4285F4.svg?logo=googlecloud)](https://cloud.google.com/storage)
-[![Data Generation: Faker](https://img.shields.io/badge/faker-synthetic_data-FF6F00.svg)](https://faker.readthedocs.io/)
+[![Apache Airflow 2.9.1](https://img.shields.io/badge/airflow-2.9.1-017CEE.svg?logo=apacheairflow)](https://airflow.apache.org/) <!-- Container image version; requirements pinned to 2.9.2 planned upgrade -->
+[![Flask 3.0 API Service](https://img.shields.io/badge/flask-3.0_API-000000.svg?logo=flask)](https://flask.palletsprojects.com/)
+[![Pandas 2.2.2](https://img.shields.io/badge/pandas-2.2.2-150458.svg?logo=pandas)](https://pandas.pydata.org/)
+[![Postgres 13 (Meta DB)](https://img.shields.io/badge/postgres-13-4169E1.svg?logo=postgresql)](https://www.postgresql.org/)
+[![SQLite (Pipeline Store)](https://img.shields.io/badge/sqlite-storage-044A64.svg?logo=sqlite)](https://www.sqlite.org/)
+[![BigQuery](https://img.shields.io/badge/google_bigquery-ingestion-1A73E8.svg?logo=googlecloud)](https://cloud.google.com/bigquery)
+[![GCS](https://img.shields.io/badge/google_cloud_storage-ingestion-4285F4.svg?logo=googlecloud)](https://cloud.google.com/storage)
+[![SQLAlchemy 1.4](https://img.shields.io/badge/sqlalchemy-1.4-CC0000.svg)](https://www.sqlalchemy.org/)
+[![Docker Compose](https://img.shields.io/badge/docker%20compose-dev_env-1D63ED.svg?logo=docker)](https://docs.docker.com/compose/)
+[![Faker 25.x](https://img.shields.io/badge/faker-synthetic_data-FF6F00.svg)](https://faker.readthedocs.io/)
 
 
 This repository demonstrates a professional **Airflow ETL/ELT pipeline portfolio**, including end-to-end orchestration, transformation, and cloud integration for **research/academic-style datasets**.
