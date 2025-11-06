@@ -1,84 +1,104 @@
 # Airflow ETL/ELT Portfolio
 
-<p> <img alt="Python" src="https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white"> <img alt="Airflow" src="https://img.shields.io/badge/Airflow-2.9.1_(imgs)%2F2.9.2_req-017CEE?logo=apacheairflow&logoColor=white"> <img alt="Flask" src="https://img.shields.io/badge/Flask-3.0_API-000000?logo=flask&logoColor=white"> <img alt="Pandas" src="https://img.shields.io/badge/Pandas-2.2.2-150458?logo=pandas&logoColor=white"> <img alt="Postgres" src="https://img.shields.io/badge/Postgres-13-4169E1?logo=postgresql&logoColor=white"> <img alt="SQLite" src="https://img.shields.io/badge/SQLite-Pipeline_DB-044A64?logo=sqlite&logoColor=white"> <img alt="BigQuery" src="https://img.shields.io/badge/Google-BigQuery-1A73E8?logo=googlecloud&logoColor=white"> <img alt="GCS" src="https://img.shields.io/badge/Google-Cloud_Storage-4285F4?logo=googlecloud&logoColor=white"> <img alt="SQLAlchemy" src="https://img.shields.io/badge/SQLAlchemy-1.4-CC0000"> <img alt="Docker Compose" src="https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&logoColor=white"> <img alt="Faker" src="https://img.shields.io/badge/Faker-25.x-FF6F00"> </p>
+[![Python 3.12](https://img.shields.io/badge/python-3.12-3776AB.svg?logo=python)](https://www.python.org/downloads/)
+[![Apache Airflow 2.9.2](https://img.shields.io/badge/airflow-2.9.2-017CEE.svg?logo=apacheairflow)](https://airflow.apache.org/)
+[![Flask API Service](https://img.shields.io/badge/flask-3.0_API_service-000000.svg?logo=flask)](https://flask.palletsprojects.com/) <!-- API container uses Flask 3.0.x; Airflow image bundles Flask 2.2.x internally -->
+[![Pandas 2.2.2](https://img.shields.io/badge/pandas-2.2.2-150458.svg?logo=pandas)](https://pandas.pydata.org/)
+[![Postgres 13 (Meta DB)](https://img.shields.io/badge/postgres-13-4169E1.svg?logo=postgresql)](https://www.postgresql.org/)
+[![SQLite (Pipeline Store)](https://img.shields.io/badge/sqlite-storage-044A64.svg?logo=sqlite)](https://www.sqlite.org/)
+[![BigQuery](https://img.shields.io/badge/google_bigquery-ingestion-1A73E8.svg?logo=googlecloud)](https://cloud.google.com/bigquery)
+[![GCS](https://img.shields.io/badge/google_cloud_storage-ingestion-4285F4.svg?logo=googlecloud)](https://cloud.google.com/storage)
+[![SQLAlchemy 1.4.52](https://img.shields.io/badge/sqlalchemy-1.4.52-CC0000.svg)](https://www.sqlalchemy.org/)
+[![Docker Compose](https://img.shields.io/badge/docker%20compose-dev_env-1D63ED.svg?logo=docker)](https://docs.docker.com/compose/)
+[![Faker 25.x](https://img.shields.io/badge/faker-synthetic_data-FF6F00.svg)](https://faker.readthedocs.io/)
 
 
-This repository demonstrates a professional **Airflow ETL/ELT pipeline portfolio**, including end-to-end orchestration, transformation, and cloud integration for **research/academic-style datasets**.
+Engineering reference implementation of two Airflow data pipelines over research-style tabular datasets: (1) CSV → GCS → BigQuery external tables; (2) REST API → Pandas transforms → SQLite upsert with dynamic schema.
 
-Key highlights:
-
-- **ETL/ELT Pipelines:** Extract, Transform/Enrich, Load data across multiple destinations  
-- **Research & Academic Data Handling:** Experimental materials, suppliers, orders, and experiments  
-- **API-Based Extraction:** Synthetic datasets via Flask API  
-- **Data Loading:** SQLite, Google Cloud Storage (GCS), BigQuery  
-- **Workflow Automation:** Scheduling, monitoring, and task dependencies via Airflow  
-- **Containerized Environment:** Docker Compose for reproducibility and consistent dev setups  
-
-This portfolio demonstrates skills in **data pipeline design, workflow automation, cloud integration, and research-oriented data processing**, making it ideal for **Data Engineering, MLOps, or AI/ML pipeline roles**.
-
----
-
-## Tech Stack & Tools
-
-- **Languages:** Python 3.12  
-- **Workflow Orchestration:** Apache Airflow 2.x  
-- **Data Storage:** SQLite, GCS, BigQuery  
-- **Containerization:** Docker, Docker Compose  
-- **Data Processing:** Pandas, Faker  
-- **Version Control & Development:** Git, VS Code DevContainer  
+**Features**
+- Orchestration: Airflow LocalExecutor, task dependency & retries.
+- Sources: Local CSV, synthetic REST (Flask).
+- Destinations: GCS objects, BigQuery external tables, local SQLite store.
+- Transformation: Pandas normalization, dtype → SQL type mapping.
+- Schema Evolution: Automatic column adds + idempotent upsert via SQLAlchemy (SQLite dialect).
+- Cloud Integration: GCP operators (bucket, dataset, external table, checks).
+- Containerized Dev: Docker Compose (webserver, scheduler, Postgres metadata, API service).
+- Synthetic Data: Faker entities (materials, suppliers, experiments, orders).
 
 ---
 
-## Getting Started
+## Quick Start
+```powershell
+git clone https://github.com/devopscicdgit/AirflowR-D-Orchestrator.git
+cd AirflowR-D-Orchestrator
+./scripts/1-environment-setup.ps1
+./scripts/2-generate-api-datasets.ps1
+./scripts/3-init-airflow.ps1
+# Airflow UI: http://localhost:8080 (admin/admin)
+```
 
-1. **Clone the repository**
-   ```powershell
-   git clone https://github.com/devopscicdgit/AirflowR-D-Orchestrator.git
-   cd AirflowR-D-Orchestrator
-   ```
-2. Setup Python environment
-    ```powershell
-    .\scripts\1-environment-setup.ps1
-    ```
-3. Generate synthetic datasets
-    ```powershell
-    .\scripts\2-generate-api-datasets.ps1
-    ```
-4. Initialize Airflow environment
-    ```powershell
-    .\scripts\3-init-airflow.ps1
-    ```
-    Access Airflow webserver at http://localhost:8080
+---
 
-    Default credentials: admin / admin
-    ### Accessing Airflow Environments
+## Operations
+| Component | Purpose | Access / Command |
+|-----------|---------|------------------|
+| Webserver | UI, DAG monitoring | http://localhost:8080 (admin/admin) |
+| Scheduler | Executes scheduled tasks | `docker compose logs scheduler` |
+| Postgres (metadata) | Airflow state storage | `docker compose exec postgres psql -U airflow -d airflow` |
+| Logs | Task run logs | `./logs/<dag_id>/<task_id>/<execution_date>/1.log` or UI |
+| API Service | Data source endpoints | http://localhost:5000 (`/api/materials` etc.) |
+| Airflow CLI | DAG/task management | `docker compose exec webserver airflow dags list` |
 
-    Once the environment is running, you can interact with the following components:
+### Run DAGs
+Trigger via UI or CLI:
+```powershell
+docker compose exec webserver airflow dags trigger materials_experiments_ingestion
+docker compose exec webserver airflow dags trigger materials_orders_experiments_etl_api
+```
+Stop environment (optional):
+```powershell
+./scripts/4-teardown.ps1
+```
 
-    | Component    | Purpose                               | Access / Notes |
-    |-------------|---------------------------------------|----------------|
-    | **Webserver** | DAG monitoring, task management       | [http://localhost:8080](http://localhost:8080)  <br>**Default credentials:** `admin / admin` |
-    | **Scheduler** | Executes and schedules DAG tasks      | Runs as a background process <br>Monitor via logs: <br>`docker-compose logs scheduler` |
-    | **Postgres DB** | Stores metadata (DAG state, users, connections) | CLI access: <br>`docker-compose exec postgres psql -U airflow -d airflow` |
-    | **Logs** | Task execution details | Located at: <br>`./logs/<dag_id>/<task_id>/<execution_date>/1.log` <br>Or view via Web UI |
-    | **API Service** | Provides synthetic datasets | [http://localhost:5000](http://localhost:5000) <br>Available endpoints: <br>`/api/suppliers` <br>`/api/materials` <br>`/api/experiments` <br>`/api/orders` |
-    | **Airflow CLI** | Command-line DAG management | Run commands inside webserver container: <br>`docker-compose exec webserver airflow <command>    # Example: airflow dags list, airflow tasks test    ` |
+## Data Verification
+### SQLite (API ETL Output)
+```powershell
+sqlite3 ./data/api_database.db ".tables"
+sqlite3 ./data/api_database.db ".schema experiments"
+sqlite3 ./data/api_database.db "SELECT COUNT(*) FROM experiments;"
+sqlite3 ./data/api_database.db "SELECT * FROM experiments LIMIT 5;"
+```
+### GCP (CSV Ingestion)
+1. Bucket exists and file uploaded (GCS Console or `gsutil ls gs://<bucket>/`).
+2. BigQuery dataset & external table created.
+3. Query sample:
+```sql
+SELECT * FROM `<PROJECT>.<DATASET>.experiments_table` LIMIT 10;
+```
+4. Optional Airflow data quality task: BigQueryCheckOperator after external table creation.
 
+## Configuration & Security
+- Set secrets/keys via environment or Airflow Connections (avoid committing JSON keys).
+- `DEVELOPMENT_MODE=true` (env) will skip actual GCP resource creation while allowing local parse/testing.
+- Recommended Variables:
+```powershell
+docker compose exec webserver airflow variables set GCP_PROJECT_ID your-project
+docker compose exec webserver airflow variables set GCS_BUCKET your-bucket
+docker compose exec webserver airflow variables set BQ_DATASET materials_experiments_dataset
+```
+- Add service account key filename (e.g., `gcp-key.json`) to `.gitignore`; prefer mounting a secret file not copying into image.
+- Change default admin password after first login.
 
- 5. Run DAGs   
-    materials_experiments_ingestion: Upload CSV → GCS → BigQuery
-
-    materials_orders_experiments_etl_api: API → SQLite ETL
-6. Teardown environment (optional)
-    ```powershell
-    .\scripts\4-teardown.ps1
-    ```
-    Preserves data/datasets for future use
+## Testing & CI
+- Pytest for `data_helpers.py` (schema evolution & upsert logic).
+- CI (GitHub Actions workflow `ci.yml`): installs deps, parses DAGs, runs pytest.
+- Future: add data quality assertions & lint (ruff/flake8).
 
 ## Notes
+- Python 3.12 required (ensure `py -3.12` available on Windows).
+- Synthetic data for development/demo only.
 
-- Adjust GCP project IDs and credentials in DAGs before deployment.
-
-- Ensure Python 3.12 is installed and available via py -3.12.
-
-- Synthetic datasets are for portfolio demonstration and learning purposes only.
+## Future Enhancements
+- Parameterize GCP resources fully via Variables/Env.
+- Add additional destinations (e.g., Parquet, S3) & TaskGroup patterns.
+- Integrate secret manager (GCP Secret Manager / Vault).
