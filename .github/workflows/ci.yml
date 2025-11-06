@@ -12,6 +12,7 @@ jobs:
     env:
       PYTHON_VERSION: '3.12'
       PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION: python
+      PYTHONPATH: ${{ github.workspace }}  # ensure package-style imports (e.g., dags.utils...)
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,6 +34,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          python -m pytest --version || echo "pytest not available"
     
       - name: Airflow DAG parse validation
         run: |
@@ -61,7 +63,7 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest -q
+          python -m pytest -q
 
       - name: Publish Test Results (Artifact)
         if: always()
