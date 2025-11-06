@@ -36,36 +36,36 @@ jobs:
     
       - name: Airflow DAG parse validation
         run: |
-            python - <<'PY'
-            import os, sys, importlib.util
-            # Ensure dags and dags/utils are importable (for 'utils' package references)
-            dags_dir = os.path.join(os.getcwd(), 'dags')
-            sys.path.insert(0, dags_dir)
-            errors = []
-            for root, _, files in os.walk(dags_dir):
-                for f in files:
-                if f.endswith('.py') and f != '__init__.py':
-                    path = os.path.join(root, f)
-                    try:
-                    spec = importlib.util.spec_from_file_location(f[:-3], path)
-                    m = importlib.util.module_from_spec(spec)
-                    spec.loader.exec_module(m)  # noqa
-                    except Exception as e:
-                    errors.append((path, e))
-            if errors:
-                for p, e in errors:
-                print(f"[DAG PARSE ERROR] {p}: {e}")
-                sys.exit(1)
-            print('DAG parse validation passed.')
-            PY
+          python - <<'PY'
+          import os, sys, importlib.util
+          # Ensure dags and dags/utils are importable (for 'utils' package references)
+          dags_dir = os.path.join(os.getcwd(), 'dags')
+          sys.path.insert(0, dags_dir)
+          errors = []
+          for root, _, files in os.walk(dags_dir):
+              for f in files:
+                  if f.endswith('.py') and f != '__init__.py':
+                      path = os.path.join(root, f)
+                      try:
+                          spec = importlib.util.spec_from_file_location(f[:-3], path)
+                          m = importlib.util.module_from_spec(spec)
+                          spec.loader.exec_module(m)  # noqa
+                      except Exception as e:
+                          errors.append((path, e))
+          if errors:
+              for p, e in errors:
+                  print(f"[DAG PARSE ERROR] {p}: {e}")
+              sys.exit(1)
+          print('DAG parse validation passed.')
+          PY
 
-            - name: Run tests
-                run: |
-                pytest -q
+      - name: Run tests
+        run: |
+          pytest -q
 
-            - name: Publish Test Results (Artifact)
-                if: always()
-                uses: actions/upload-artifact@v4
-                with:
-                    name: pytest-results
-                    path: ./.pytest_cache
+      - name: Publish Test Results (Artifact)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pytest-results
+          path: ./.pytest_cache
